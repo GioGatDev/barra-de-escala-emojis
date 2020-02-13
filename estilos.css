@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+*
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #122b50;
+}
+
+.escala{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.escala input{
+    display: none;
+
+}
+
+.escala label{
+    position: relative;
+    width: 0;
+    height: 60px;
+    cursor: pointer;
+    transition: 0.5s;
+    filter: grayscale(1);
+    text-align: center;
+    opacity: 0;
+}
+
+.escala:hover label{
+    width: 160px;
+    opacity: 0.2;
+}
+
+.escala input:hover + label,
+.escala input:checked + label
+{
+    filter: grayscale(0);
+    opacity: 1;
+    width: 160px;
+}
+
+.escala label h4{
+    color: #ffffff;
+    font-size: 24px;
+    padding-top: 10px;
+    font-weight: 500px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(-50px) scale(0);
+    transition: 0.5s;
+
+}
+
+.escala input:hover + label h4,
+.escala input:checked + label h4
+{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+
+}
+
+.text{
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    width: 500px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 36px;
+}
